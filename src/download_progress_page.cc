@@ -19,8 +19,8 @@
 
 DownloadProgressPage::DownloadProgressPage(QWidget* parent)
     : WizardPage(parent) {
-  setTitle("CloudReady Download");
-  setSubTitle("Your installer image is currently downloading.");
+  setTitle("ThoriumOS Download");
+  setSubTitle("The installer image is currently downloading.");
   download_finished = false;
   layout.addWidget(&progress);
   setLayout(&layout);

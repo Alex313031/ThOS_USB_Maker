@@ -45,6 +45,6 @@ AboutDialog::AboutDialog() {
   layout_.addWidget(&close_button_, 0, Qt::AlignRight);
   setLayout(&layout_);
   setMinimumWidth(500);
-  setWindowTitle(tr("CloudReady USB Maker"));
+  setWindowTitle(tr("ThoriumOS USB Maker"));
 }
 }  // namespace gondar

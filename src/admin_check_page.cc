@@ -61,11 +61,11 @@ bool AdminCheckPage::isComplete() const {
 }
 
 void AdminCheckPage::showIsAdmin() {
-  setTitle("Welcome to the CloudReady USB Creation Utility");
+  setTitle("Welcome to the ThoriumOS USB Creation Utility");
   // note that a subtitle must be set  on a page in order for logo to display
   setSubTitle(
       "This utility will create a USB device that can be used to install "
-      "CloudReady on any computer.");
+      "ThoriumOS on any computer.");
   label.setText(
       "<p>You will need:</p><ul><li>8GB or 16GB USB stick</li><li>20 minutes "
       "for USB installer creation</li></ul></p>");

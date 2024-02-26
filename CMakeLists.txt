@@ -1,3 +1,4 @@
+# Copyright 2024 Alex313031
 # Copyright 2017 Neverware
 #
 # This program is free software: you can redistribute it and/or modify
@@ -22,7 +23,7 @@ include(infra/gondar.cmake)
 set(CHROMEOVER OFF CACHE BOOL "Build for Chromeover customers")
 
 # Whether the build is release (console, grv.neverware.com, etc.)
-set(RELEASE OFF CACHE BOOL "Release build")
+set(RELEASE ON CACHE BOOL "Release build")
 
 # This is for the builders, to make sure new warnings don't creep in
 set(TREAT_WARNINGS_AS_ERRORS OFF CACHE BOOL "Compile with -Werror")
@@ -70,6 +71,10 @@ set(EXTRA_WARNINGS ${EXTRA_WARNINGS}
 # C++14 needed for std::experimental::optional. (C++17 is not
 # supported in the version of gcc used by MXE.)
 set(CMAKE_CXX_STANDARD 14)
+set(default_build_type "Release")
+set(CMAKE_C_FLAGS "-O3 -g0 -s -msse3 -fpermissive -DNDEBUG")
+set(CMAKE_CPP_FLAGS "-O3 -g0 -s -msse3 -fpermissive -DNDEBUG")
+set(CMAKE_CXX_FLAGS "-O3 -g0 -s -msse3 -fpermissive -DNDEBUG")
 
 set(METRICS_API_KEY CACHE STRING "metrics API key")
 set(GOOGLE_SIGN_IN_CLIENT CACHE STRING "sign in with google API client")
@@ -142,8 +147,8 @@ target_link_libraries(app PUBLIC
   Qt5::Network Qt5::Widgets minizip minizip_extra microhttpd)
 
 # Gondar application
-add_executable(cloudready-usb-maker src/main.cc)
-target_link_libraries(cloudready-usb-maker app)
+add_executable(thoriumos-usb-maker src/main.cc)
+target_link_libraries(thoriumos-usb-maker app)
 
 # Test application
 add_executable(tests test/test.cc)
@@ -159,7 +164,7 @@ set_target_properties(slowtests PROPERTIES AUTOMOC ON)
 if(WIN32)
   include(infra/gdisk.cmake)
   if(NOT ${WIN32_CONSOLE})
-    set_target_properties(cloudready-usb-maker PROPERTIES WIN32_EXECUTABLE ON)
+    set_target_properties(thoriumos-usb-maker PROPERTIES WIN32_EXECUTABLE ON)
   endif()
 
   fix_qt_static_link(app)
@@ -169,7 +174,7 @@ if(WIN32)
   # which contain a shadowing whoopsie
   set_source_files_properties(src/gpt_pal.cc PROPERTIES COMPILE_FLAGS -Wno-shadow)
   target_sources(app PRIVATE src/gondar.cc src/dismissprompt.cc src/gpt_pal.cc src/mkfs.cc)
-  target_sources(cloudready-usb-maker PRIVATE resources/gondar.rc)
+  target_sources(thoriumos-usb-maker PRIVATE resources/gondar.rc)
 else()
   target_sources(app PRIVATE src/stubs.cc)
 endif()

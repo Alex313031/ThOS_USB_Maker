@@ -43,7 +43,7 @@ FeedbackDialog::FeedbackDialog() {
   layout_.addWidget(&submit_button_, 0, Qt::AlignRight);
   setLayout(&layout_);
   setMinimumWidth(500);
-  setWindowTitle(tr("CloudReady USB Maker"));
+  setWindowTitle(tr("ThoriumOS USB Maker"));
   // submit button initially grayed out, there's no input yet
   submit_button_.setEnabled(false);
   wizard = NULL;
@@ -56,7 +56,7 @@ void FeedbackDialog::setWizard(GondarWizard* wizard_in) {
 }
 
 static QNetworkRequest createFeedbackRequest() {
-  auto url = QUrl("https://feedback.neverware.com/gondar");
+  auto url = QUrl("https://github.com/Alex313031/ThOS_USB_Maker/issues");
   QNetworkRequest request(url);
   request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
   return request;

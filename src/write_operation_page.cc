@@ -29,7 +29,7 @@ WriteOperationPage::WriteOperationPage(QWidget* parent)
 
   whatsNext.setObjectName("whatsNext");
   whatsNext.setText(
-      "<p>You're ready to install CloudReady!  Head back to <a "
+      "<p>You're ready to install ThoriumOS!  Head back to <a "
       "href=\"https://guide.neverware.com/install-cloudready\">the install "
       "guide</a> for help in how to use your USB installer.<br></p><p>Don't "
       "forget to check the 'Details' link for your devices on the <a "
@@ -54,7 +54,7 @@ void WriteOperationPage::initializePage() {
     setTitle("Formatting your USB");
     setSubTitle("This process should only take a moment.");
   } else {
-    setTitle("Creating your CloudReady USB installer");
+    setTitle("Creating your ThoriumOS USB installer");
     setSubTitle("This process may take up to 20 minutes.");
   }
   bolded.hide();
@@ -106,15 +106,15 @@ void WriteOperationPage::showWhatsNext() {
     setTitle("USB has been formatted!");
     setSubTitle("You may now use this USB for file storage.");
     whatsNext.setText(
-        "<p>Your USB has been formatted to remove all CloudReady installer "
+        "<p>Your USB has been formatted to remove all ThoriumOS installer "
         "data."
         "  You can now proceed to use it for file storage or other "
         "purposes.</p>");
   } else {
-    setTitle("CloudReady USB created!");
+    setTitle("ThoriumOS USB created!");
     setSubTitle("You may now either exit or create another USB.");
     whatsNext.setText(
-        "<p>You're ready to install CloudReady!  Head back to <a "
+        "<p>You're ready to install ThoriumOS!  Head back to <a "
         "href=\"https://guide.neverware.com/install-cloudready\">the install "
         "guide</a> for help in how to use your USB installer.<br></p><p>Don't "
         "forget to check the 'Details' link for your devices on the <a "

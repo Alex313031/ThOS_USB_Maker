@@ -39,7 +39,7 @@ void NewestImageUrl::fetch() {
 void NewestImageUrl::handleReply(QNetworkReply* reply) {
   const auto error = reply->error();
   if (error != QNetworkReply::NoError) {
-    LOG_ERROR << "Error retrieving CloudReady Home Edition URL";
+    LOG_ERROR << "Error retrieving ThoriumOS download URL";
     emit errorOccurred();
     return;
   }

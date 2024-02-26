@@ -75,7 +75,7 @@ void GondarWizard::init() {
   setPage(Page_writeOperation, &writeOperationPage);
   setPage(Page_error, &p_->errorPage);
   setWizardStyle(QWizard::ClassicStyle);
-  setWindowTitle(tr("CloudReady USB Maker"));
+  setWindowTitle(tr("ThoriumOS USB Maker"));
   setPixmap(QWizard::LogoPixmap, QPixmap(":/images/crlogo.png"));
 
   setButtonText(QWizard::CustomButton1, "Make Another USB");

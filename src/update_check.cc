@@ -70,10 +70,10 @@ void UpdateCheck::showMessage(const QString& latestVersionString) {
   }
   const QString downloadUrl = baseUrl + product + filename;
   QMessageBox box(QMessageBox::Information, "Update Available",
-                  "A new version of CloudReady USB Maker is now available.");
+                  "A new version of ThoriumOS USB Maker is now available.");
   box.setInformativeText(
       QString("Click 'Download Update' to download version %2 in your web "
-              "browser.  When your download starts you can close CloudReady "
+              "browser.  When your download starts you can close ThoriumOS "
               "USB Maker.  To complete the upgrade just launch the new "
               "version.")
           .arg(latestVersionString));

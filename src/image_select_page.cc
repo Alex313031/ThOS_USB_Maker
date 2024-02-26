@@ -33,7 +33,7 @@ class DownloadButton : public QRadioButton {
 };
 
 ImageSelectPage::ImageSelectPage(QWidget* parent) : WizardPage(parent) {
-  setTitle("Which version of CloudReady do you need?");
+  setTitle("Which version of ThoriumOS do you need?");
   setSubTitle(" ");
   setLayout(&layout);
 }
